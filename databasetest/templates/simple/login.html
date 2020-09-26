@@ -1,0 +1,67 @@
+{% extends 'simple/base.html' %}
+
+{% block title %}
+  HOME PAGE
+{% endblock title %}
+
+{% block content %}
+  <div class="container">
+    <div class="jumbotron">
+      <h1>Hoş Geldiniz</h1>
+ <br>
+        <form method="post" action="{% url 'user_login' %}">
+          {% csrf_token %}
+         
+         <td> <label for="username">Kullanıcı Adı:</label>
+          <input type="text" name="username" placeholder="Username">
+   <br> <br>
+         <td> <label style="margin-right:55px;" for="password">Şifre:</label>
+          <input type="password" name="password">
+ <br> <br>
+          <input type="submit" name="" value="Giriş Yap">
+ 
+        </form>
+ 
+    </div>
+  </div>
+{% endblock content %}
+
+{% comment %} 
+
+{% block body_block %}
+  <div class="container">
+    <div class="jumbotron">
+      <h1>Please Login</h1>
+ 
+        <form method="post" action="{% url 'simple:user_login' %}">
+          {% csrf_token %}
+          {# A more "HTML" way of creating the login form#}
+          <label for="username">Username:</label>
+          <input type="text" name="username" placeholder="Username">
+ 
+          <label for="password"></label>
+          <input type="password" name="password">
+ 
+          <input type="submit" name="" value="Login">
+ 
+        </form>
+ 
+    </div>
+  </div>
+{% endblock  %} {% endcomment %}
+
+{% comment %} {% block content %}
+  
+    <div class="jumbotron jumbotron-fluid">
+    <div class="container">
+      <h1 class="display-4"><center>TO-DO LIST</center></h1>
+     
+      <div class="text-center">
+      </div>
+    </div>
+  </div>
+
+  
+
+{% endblock content %}
+ {% endcomment %}
